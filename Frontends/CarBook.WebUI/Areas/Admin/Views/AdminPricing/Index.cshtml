@@ -1,0 +1,50 @@
+﻿@model List<ResultPricingDto>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int Count = 0;
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Ödeme Türleri Alanı</h4>
+                        <p class="card-subtitle mb-4">
+                            Araçların Saatlik, Günlük, Aylık v.b. Kiralama opsiyonlarının yer aldığı sayfadır. Bu sayfa üzerinden yeni bir zaman periyodu Eklenebilir, Güncellenebilir ya da Silinebilir.
+                        </p>
+                        <div class="table-responsive">
+                            <table class="table mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Periyod Adı</th>
+                                        <th>Sil</th>
+                                        <th>Güncelle</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        Count++;
+                                        <tr>
+                                            <td>@Count</td>
+                                            <td>@item.Name</td>
+                                            <td><a href="/Admin/AdminPricing/RemovePricing/@item.PricingID" class="btn btn-outline-danger">Sil</a></td>
+                                            <td><a href="/Admin/AdminPricing/UpdatePricing/@item.PricingID" class="btn btn-outline-success">Güncelle</a></td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                            <a href="/Admin/AdminPricing/CreatePricing/" class="btn btn-outline-primary">Yeni Ödeme Periyodu Girişi</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+﻿@model CreateServiceDto
+
+@{
+    ViewData["Title"] = "CreateService";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Hizmet Sayfası Veri Girişi Alanı</h4>
+                        <p class="card-subtitle mb-4">
+                            Ana sayfa ve Hizmetler bölümünde yer alan hizmet listesinin admin tarafında yer alan işlemlerini aşağıdaki alanda gerçekleştirebilirsiniz. Tema bütünlüğünü korumak adana 4 tane giriş yapınız.
+                        </p>
+                        <form method="post">
+                            <div class="form-group">
+                                <label for="exampleInputTitle">Hizmet Başlığı</label>
+                                <input type="text" class="form-control" id="exampleInputTitle" asp-for="Title" placeholder="Hizmet Başlığını Giriniz...">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputDescription">Hizmet Başlığı</label>
+                                <input type="text" class="form-control" id="exampleInputDescription" asp-for="Description" placeholder="Hizmet Açıklamasını Giriniz...">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputIconURL">Hizmet Başlığı</label>
+                                <input type="text" class="form-control" id="exampleInputIconURL" asp-for="IconURL" placeholder="Hizmet Icon Bilgisini Giriniz...">
+                            </div>
+                            <button type="submit" class="btn btn-primary waves-effect waves-light">Hizmet Bilgisini Kaydet</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
